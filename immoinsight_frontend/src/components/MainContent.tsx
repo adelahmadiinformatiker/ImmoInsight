@@ -1,60 +1,83 @@
-import React from "react";
-import "./MainContent.css";
-import Content from "./Content";
+import React from 'react'
+import Dashboard from '../pages/Dashboard'
 
-const MainContent: React.FC = () => {
+interface Props {
+  section: string
+}
+
+const MainContent: React.FC<Props> = ({ section }) => {
+  const renderContent = () => {
+    switch (section) {
+      case 'dashboard':
+        return <Dashboard />
+      case 'profile':
+        return <div>Profile Page</div>
+      case 'signin':
+        return <div>Sign In Page</div>
+      case 'signup':
+        return <div>Sign Up Page</div>
+      case 'blank':
+        return <div>Blank Page</div>
+      case 'buttons':
+        return <div>Buttons Page</div>
+      case 'forms':
+        return <div>Forms Page</div>
+      case 'cards':
+        return <div>Cards Page</div>
+      case 'typography':
+        return <div>Typography Page</div>
+      case 'icons':
+        return <div>Icons Page</div>
+      case 'charts':
+        return <div>Charts Page</div>
+      case 'maps':
+        return <div>Maps Page</div>
+      default:
+        return <div>No content available</div>
+    }
+  }
+
+  const getSectionTitle = () => {
+    switch (section) {
+      case 'dashboard':
+        return 'Analytics Dashboard'
+      case 'profile':
+        return 'Profile'
+      case 'signin':
+        return 'Sign In'
+      case 'signup':
+        return 'Sign Up'
+      case 'blank':
+        return 'Blank Page'
+      case 'buttons':
+        return 'Buttons'
+      case 'forms':
+        return 'Forms'
+      case 'cards':
+        return 'Cards'
+      case 'typography':
+        return 'Typography'
+      case 'icons':
+        return 'Icons'
+      case 'charts':
+        return 'Charts'
+      case 'maps':
+        return 'Maps'
+      default:
+        return 'No content available'
+    }
+  }
+
   return (
-    <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4" >
-      <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 className="h2">Dashboard</h1>
-        <div className="btn-toolbar mb-2 mb-md-0">
-          <div className="btn-group me-2">
-            <button type="button" className="btn btn-sm btn-outline-secondary">
-              Share
-            </button>
-            <button type="button" className="btn btn-sm btn-outline-secondary">
-              Export
-            </button>
-          </div>
-          <button
-            type="button"
-            className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1"
-          >
-            <svg className="bi">
-              <use xlinkHref="#calendar3" />
-            </svg>
-            This week
-          </button>
-        </div>
-      </div>
-
-      <Content />
-
-      <h2>Section title</h2>
-      <div className="table-responsive small">
-        <table className="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-          </tbody>
-        </table>
+    <main className="content">
+      <div className="container-fluid p-0">
+        <h1 className="h3 mb-3">
+          <strong>{getSectionTitle()}</strong>
+        </h1>
+        {renderContent()}
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default MainContent;
+export default MainContent

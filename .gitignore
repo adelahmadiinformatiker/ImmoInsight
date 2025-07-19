@@ -1,7 +1,17 @@
 # Ignore node_modules and build outputs
 
-# Frontend dependencies
-immoinsight_frontend/node_modules/
+# Node modules
+node_modules/
+
+# Env files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.test.local
+.env.test.local.example
+.env.test.local.example
 
 # Backend build and dependencies
 immoinsight_backend/build/
