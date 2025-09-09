@@ -39,7 +39,30 @@
 
 ## Vorgeschlagene Aufgaben für die nächsten Sprints (laut Project_Development_Plan_de.md)
 
-- [ ] Implementierung der statistischen Analyse und Graphenanzeige (Sprint 3)
+### ✅ Sprint 3 - Stage 1: Backend Statistics Service (ABGESCHLOSSEN)
+
+- [x] StatisticsService.java implementiert
+- [x] PriceStatistics DTO erstellt
+- [x] StatisticsController hinzugefügt
+- [x] API-Endpoints getestet
+- [x] Error Handling implementiert
+
+### ✅ Sprint 3 - Stage 2: Frontend Statistics Dashboard (ABGESCHLOSSEN)
+
+- [x] Statistics Dashboard Komponente erstellen
+- [x] KPI Widget Integration
+- [x] Real-time Data Updates
+- [x] Error Handling & Loading States
+
+### 🔄 Sprint 3 - Stage 3: Advanced Analytics & Charts (NÄCHSTE PHASE)
+
+- [ ] Charts & Graphs Integration (Chart.js)
+- [ ] Interactive Filtering
+- [ ] Data Visualization
+- [ ] Export Functionality
+
+### 📋 Weitere Sprints
+
 - [ ] Anbindung an LLM und Generierung intelligenter Textanalysen (Sprint 4)
 - [ ] Anbindung an Echtzeitdaten und Live-Analyse (Sprint 5)
 - [ ] Vervollständigung der Dokumentation und Vorbereitung für den Release (Sprint 6)

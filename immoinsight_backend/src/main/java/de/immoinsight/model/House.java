@@ -1,4 +1,4 @@
-package de.immoinsight.immoinsight_backend.model;
+package de.immoinsight.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -175,4 +175,4 @@ public class House {
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
     }
-}
+} 

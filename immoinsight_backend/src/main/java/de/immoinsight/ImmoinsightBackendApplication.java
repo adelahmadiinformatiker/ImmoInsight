@@ -1,4 +1,4 @@
-package de.immoinsight.immoinsight_backend;
+package de.immoinsight;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,4 +10,4 @@ public class ImmoinsightBackendApplication {
 		SpringApplication.run(ImmoinsightBackendApplication.class, args);
 	}
 
-}
+} 

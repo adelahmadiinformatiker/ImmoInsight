@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  # Spring Boot Backend
+  immoinsight-backend:
+    build: ./immoinsight_backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - immoinsight-ai-service
+    networks:
+      - immoinsight-network
+
+  # Python AI Service
+  immoinsight-ai-service:
+    build: ./immoinsight_ai_service
+    ports:
+      - "8001:8001"
+    environment:
+      - PYTHONPATH=/app
+    networks:
+      - immoinsight-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # React Frontend (optional - for development)
+  immoinsight-frontend:
+    build: ./immoinsight_frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8080
+    depends_on:
+      - immoinsight-backend
+    networks:
+      - immoinsight-network
+
+networks:
+  immoinsight-network:
+    driver: bridge

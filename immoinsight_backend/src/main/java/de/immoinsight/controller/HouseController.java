@@ -1,7 +1,7 @@
-package de.immoinsight.immoinsight_backend.controller;
+package de.immoinsight.controller;
 
-import de.immoinsight.immoinsight_backend.model.House;
-import de.immoinsight.immoinsight_backend.repository.HouseRepository;
+import de.immoinsight.model.House;
+import de.immoinsight.repository.HouseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -65,4 +65,4 @@ public class HouseController {
             return cb.and(predicates.toArray(new jakarta.persistence.criteria.Predicate[0]));
         }, pageable);
     }
-}
+} 

@@ -11,6 +11,8 @@ ImmoInsight ist eine Full-Stack-Anwendung zur Immobilienanalyse, bestehend aus e
 ```
 immoinsight_backend/   # Java Spring Boot Backend
 immoinsight_frontend/  # React + TypeScript Frontend (Vite)
+immoinsight_ai_service/ # Python AI/ML Microservice (FastAPI)
+reports/              # Projektberichte und Dokumentation
 ```
 
 ### Backend (immoinsight_backend)
@@ -29,6 +31,16 @@ immoinsight_frontend/  # React + TypeScript Frontend (Vite)
   - `package.json`: Abhängigkeitsmanagement
   - `vite.config.ts`: Vite-Konfiguration
 
+### AI Service (immoinsight_ai_service)
+
+- **Technologien:** Python, FastAPI, Pydantic
+- **Wichtige Dateien:**
+  - `main.py`: FastAPI Application Entry Point
+  - `app/service.py`: AI/ML Logic
+  - `app/schemas.py`: Data Models
+  - `requirements.txt`: Python Dependencies
+  - `Dockerfile`: Container Configuration
+
 ---
 
 ## Voraussetzungen
@@ -39,8 +51,13 @@ immoinsight_frontend/  # React + TypeScript Frontend (Vite)
   - Gradle (Wrapper im Projekt enthalten)
 
 - **Frontend:**
+
   - Node.js (empfohlen: v18 oder höher)
   - npm (wird mit Node.js installiert)
+
+- **AI Service:**
+  - Python 3.11 oder höher
+  - pip (Python Package Manager)
 
 ---
 
@@ -62,6 +79,15 @@ Wechseln Sie in das Backend-Verzeichnis und bauen Sie das Projekt (Abhängigkeit
 ```powershell
 cd immoinsight_backend
 ./gradlew build --refresh-dependencies
+```
+
+### 3. AI Service installieren
+
+Wechseln Sie in das AI Service-Verzeichnis und installieren Sie die Python-Abhängigkeiten:
+
+```powershell
+cd immoinsight_ai_service
+pip install -r requirements.txt
 ```
 
 ---
@@ -93,6 +119,47 @@ npm run dev
 ```
 
 Die Anwendung ist dann unter [http://localhost:5173](http://localhost:5173) erreichbar.
+
+### AI Service starten
+
+Im Verzeichnis `immoinsight_ai_service`:
+
+```powershell
+python main.py
+```
+
+Der AI Service läuft standardmäßig auf Port 8001 und ist unter [http://localhost:8001](http://localhost:8001) erreichbar.
+
+### Mit Docker Compose (empfohlen)
+
+Für die einfache Ausführung aller Services:
+
+```powershell
+docker-compose up
+```
+
+Dies startet automatisch alle Services (Backend, Frontend, AI Service) mit der korrekten Konfiguration.
+
+---
+
+## 📊 Projektberichte
+
+Alle wichtigen Berichte und Dokumentationen befinden sich im `reports/` Verzeichnis:
+
+### **Aktuelle Berichte**
+
+- `SPRINT3_VORBEREITUNGSBERICHT.md` - Detaillierte Vorbereitung für Sprint 3
+- `REPORT_de.md` - Allgemeiner Tätigkeitsbericht
+- `SPRINT1_ABSCHLUSSBERICHT.md` - Sprint 1 Abschlussbericht
+- `SPRINT2_ABSCHLUSSBERICHT.md` - Sprint 2 Abschlussbericht
+
+### **Berichtstypen**
+
+- **Sprint-Abschlussberichte:** Dokumentation abgeschlossener Sprint-Arbeiten
+- **Vorbereitungsberichte:** Infrastruktur-Setup und Testing
+- **Tätigkeitsberichte:** Laufende Projektaktivitäten
+
+Weitere Details finden Sie in `reports/README.md`.
 
 ---
 

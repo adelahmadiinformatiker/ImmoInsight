@@ -1,4 +1,4 @@
-package de.immoinsight.immoinsight_backend;
+package de.immoinsight;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,4 +10,4 @@ class ImmoinsightBackendApplicationTests {
 	void contextLoads() {
 	}
 
-}
+} 

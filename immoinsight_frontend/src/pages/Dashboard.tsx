@@ -4,6 +4,7 @@ import { initBarChart } from '../scripts/charts/barChart'
 import { initPieChart } from '../scripts/charts/pieChart'
 import { initWorldMap } from '../scripts/maps/worldMap'
 import { initCalendar } from '../scripts/ui/calendar'
+import { DashboardKPIs } from '../components/DashboardKPIs'
 
 const Dashboard: React.FC = () => {
   useEffect(() => {
@@ -22,6 +23,9 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
+      {/* Statistics KPIs */}
+      <DashboardKPIs />
+
       <div className="row">
         <div className="col-xl-6 col-xxl-5 d-flex">
           <div className="w-100">
