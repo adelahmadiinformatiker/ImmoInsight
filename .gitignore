@@ -22,4 +22,5 @@ immoinsight_backend/.gradle/
 .DS_Store
 .vscode/
 .idea/
-.reports/
+
+reports/
